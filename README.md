@@ -22,7 +22,7 @@ A robot that learns and recognizes patterns on the go.
 6. Raspberry Pi Camera v2 for camera with acrylic camera mount
 7. USB microphone
 8. USB speaker
-9. AC8265 Wireless NIC for Jetson Nano for wifi (Optional)
+9. AC8265 Wireless NIC for Jetson Nano for wifi
 10. Powered by 4xAA batteries.
 
 # Setup
