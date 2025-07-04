@@ -25,3 +25,15 @@ A robot that learns and recognizes patterns on the go.
 9. AC8265 Wireless NIC for Jetson Nano for wifi (Optional)
 10. Powered by 4xAA batteries.
 
+# Setup
+1. Install jetson-utils
+https://github.com/dusty-nv/jetson-utils
+
+2. Install pyrebel 
+`python3 -m pip install pyrebel`
+
+# Running the script
+`git clone https://github.com/ps-nithin/zumo-jetson`
+`cd zumo-jetson/scripts`
+`su`
+`python3 pyrebel_main_learn_sound_jetson.py --camera 1`
