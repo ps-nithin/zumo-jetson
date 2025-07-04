@@ -35,4 +35,5 @@ https://github.com/dusty-nv/jetson-utils
 # Running the script
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
 `cd zumo-jetson/scripts`<br>
-`sudo python3 pyrebel_main_learn_sound_jetson.py --camera 1`<br>
+`su`<br>
+`python3 pyrebel_main_learn_sound_jetson.py --camera 1`<br>
