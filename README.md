@@ -19,7 +19,7 @@ A robot that learns and recognizes patterns on the go.
 3. Motor driver (Pololu - DRV8833 Dual Motor Driver Carrier https://www.pololu.com/product/2130)
 4. Voltage regulator (Pololu - 5V Step-Up/Step-Down Voltage Regulator S9V11F5 https://www.pololu.com/product/2836)
 5. Arduino Nano RP2040 connect as motor controller
-6. Raspberry Pi Camera v2 for camera
+6. Raspberry Pi Camera v2 for camera with acrylic camera mount
 7. USB microphone
 8. USB speaker
 9. AC8265 Wireless NIC for Jetson Nano for wifi (Optional)
