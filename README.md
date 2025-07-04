@@ -10,7 +10,7 @@ A robot that learns and recognizes patterns on the go.
 
 4. Three leds (white, green and blue) connected to the arduino shows the current state of the program. The white led blinks when the program is ready to accept input. The green led blinks when a green blob is detected in the input and program tries to recognize the input. The blue led blinks when a blue blob is detected in the input and the program tries to learn the input. When both the green and the blue led blinks it indicates that both green and blue blobs are present in the input and one may be removed.
 
-5. A speaker and microphone is connected to jetson nano over usb. A Raspberry pi camera module v2 is connected to csi camera port of the jetson nano. Wireless connectivity or internet is not needed to run the program but is used for setting up jetson nano.
+5. A speaker and microphone is connected to jetson nano over usb. A Raspberry pi camera module v2 is connected to csi camera port of the jetson nano. Wireless connectivity nor internet is needed to run the program but is used for setting up jetson nano.
 
 # Build
 <p align="center"><img src="images/zumo-jetson1.jpg"></img></p><br>
