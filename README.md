@@ -30,7 +30,7 @@ A robot that learns and recognizes patterns on the go.
 https://github.com/dusty-nv/jetson-utils
 
 2. Install pyrebel 
-`python3 -m pip install pyrebel`
+`sudo python3 -m pip install pyrebel`
 
 # Running the script
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
