@@ -4,7 +4,7 @@ A robot that learns and recognizes patterns on the go.
 
 1. The robot is based on Jetson Nano.
 
-2. The demo script reads the camera frames. Masks the blob, here green (for recognizing) and blue (for learning), using color based segmentation by converting the frames to HSV color space. A check is applied to avoid blobs overlapping with the edge of the frame. The masked image is then inputted to pyrebel which learns/recognizes the blob. Here the recognized symbols are mapped with audio recordings made during learning the pattern. The recorded audio is played back during recognition.
+2. The demo script reads the camera frames. Masks the blob, here green (for recognizing) and blue (for learning), using color based segmentation by converting the frames to HSV color space. A check is applied to avoid blobs overlapping with the edge of the frame. The masked image is then inputted to pyrebel which learns/recognizes the blob (using https://github.com/ps-nithin/pyrebel#5-pattern-recognition-demo). Here the recognized symbols are mapped with audio recordings made during learning the pattern. The recorded audio is played back during recognition.
 
 3. The robot uses an Arduino Nano RP2040 Connect as motor controller. It is connected to jetson nano over usb. The arduino firmware has common functions to drive motors and leds connected to it. For example, sending "blinkledwhite_1" over serial to the arduino turns on the white led.
 
