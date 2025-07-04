@@ -33,7 +33,7 @@ https://github.com/dusty-nv/jetson-utils
 `python3 -m pip install pyrebel`
 
 # Running the script
-`git clone https://github.com/ps-nithin/zumo-jetson`
-`cd zumo-jetson/scripts`
-`su`
-`python3 pyrebel_main_learn_sound_jetson.py --camera 1`
+`git clone https://github.com/ps-nithin/zumo-jetson`<br>
+`cd zumo-jetson/scripts`<br>
+`su`<br>
+`python3 pyrebel_main_learn_sound_jetson.py --camera 1`<br>
