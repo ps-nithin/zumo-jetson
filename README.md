@@ -24,7 +24,8 @@ A robot that learns and recognizes patterns on the go.
 7. USB microphone
 8. USB speaker
 9. AC8265 Wireless NIC for Jetson Nano for wifi
-10. Powered by 4xAA batteries.
+10. Standoffs and PCBs for structure holding the components
+11. Powered by 4xAA batteries.
 
 # Setup
 1. Install jetson-utils
