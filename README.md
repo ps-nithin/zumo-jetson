@@ -51,6 +51,7 @@ https://github.com/dusty-nv/jetson-utils
      `sudo apt install libportaudio2 espeak-ng`<br>
     
 4. Install pyrebel<br>
+   `cd`<br>
    `git clone https://github.com/ps-nithin/pyrebel`<br>
    `cd pyrebel`<br>
    `python3 -m pip install .`<br>
