@@ -61,6 +61,7 @@ https://github.com/dusty-nv/jetson-utils
 You may also need to change microphone and speaker settings.
 
 # Running the script
+`cd`<br>
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
 `cd zumo-jetson/scripts`<br>
 `sudo $HOME/miniforge3/bin/python3 pyrebel_main_learn_sound_jetson.py --camera 1 --user=$USERNAME`<br>
