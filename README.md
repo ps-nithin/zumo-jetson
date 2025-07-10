@@ -40,6 +40,7 @@ https://github.com/dusty-nv/jetson-utils
      `conda install -c numba numba`<br>
      
      Copy `jetson-utils` library files from `/usr/lib/python3.6/dist-packages/` to `$HOME/miniforge3/lib/python3.8/site-packages`<br>
+
      `python3 -m pip install pyserial`<br>
      `python3 -m pip install scipy`<br>
      `python3 -m pip install sounddevice`<br>
