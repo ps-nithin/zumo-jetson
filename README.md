@@ -54,6 +54,7 @@ https://github.com/dusty-nv/jetson-utils
    `git clone https://github.com/ps-nithin/pyrebel`<br>
    `cd pyrebel`<br>
    `python3 -m pip install .`<br>
+   
    To learn patterns you could also use `demo/pyrebel_main_learn.py` (https://github.com/ps-nithin/pyrebel#5-pattern-recognition-demo)<br>
 
 # Running the script
