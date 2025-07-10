@@ -62,3 +62,8 @@ https://github.com/dusty-nv/jetson-utils
 `cd zumo-jetson/scripts`<br>
 `sudo $HOME/miniforge3/bin/python3 pyrebel_main_learn_sound_jetson.py --camera 1 --user=$USERNAME`<br>
 
+# Running the script on startup
+`sudo cp zumo-jetson.service /etc/systemd/system/`<br>
+`sudo systemctl daemon-reload`<br>
+`sudo systemctl enable zumo-jetson.service`<br>
+`sudo systemctl start zumo-jetson.service`<br>
