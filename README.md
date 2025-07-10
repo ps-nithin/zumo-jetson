@@ -32,9 +32,14 @@ Tested to run on a Jetson Nano with Jetpack 4.6.1. Should work with other jetson
 1. Install jetson-utils
 https://github.com/dusty-nv/jetson-utils
 
-2. Numba is installed inside a miniforge environment.
-   2.1 Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl  
-3. Install pyrebel 
+2. Numba is installed inside a miniforge environment.<br>
+   Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl
+   Run the following commands,
+   `source miniforge3/bin/activate`
+   `conda install python=3.8`
+   `conda install -c numba numba`
+     
+4. Install pyrebel 
 `sudo python3 -m pip install pyrebel`
 
 # Running the script
