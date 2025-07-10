@@ -13,18 +13,20 @@
 # If not, see <https://www.gnu.org/licenses/>.
 #
 
+# This is a demo of live pattern recognition running on zumo-jetson robot.
+#
+
 import numpy as np
 from numba import cuda
 from PIL import Image
 from scipy.io.wavfile import write
-import math,argparse,time,os,serial
+import math,argparse,time,os,serial,wave,sys
 import sounddevice as sd
 from pyrebel.preprocess import Preprocess
 from pyrebel.abstract import Abstract
 from pyrebel.edge import Edge
 from pyrebel.learn import Learn
 from pyrebel.utils import *
-
 
 def bounds_at_edge(bound_points,scaled_shape,clearance):
     for i in bound_points:
@@ -33,9 +35,6 @@ def bounds_at_edge(bound_points,scaled_shape,clearance):
         if r<clearance or r>(scaled_shape[0]-clearance) or c<clearance or c>(scaled_shape[1]-clearance):
             return True
     return False
-
-# This is a demo of pattern recognition and learning running on zumo-jetson
-#
 
                                                 
 parser=argparse.ArgumentParser()
@@ -62,6 +61,7 @@ parser.add_argument("-hvr","--high_value_recognize",help="Maxmimum value")
 
 parser.add_argument("-l","--learn",help="Symbol to learn.")
 parser.add_argument("-r","--recognize",help="Recognize the signature.")
+parser.add_argument("-u","--user",help="Name of the user.")
 args=parser.parse_args()
 
 # Green for recognizing
@@ -186,6 +186,7 @@ print()
 
 ser=serial.Serial('/dev/ttyACM0',115200,timeout=1,write_timeout=2)
 time.sleep(2)
+os.system("sudo -u "+args.user+" espeak-ng hello")
 
 while 1:
     init_time=time.time()    
@@ -396,6 +397,7 @@ while 1:
     
     if blob_over_edge:
         print("blob over edge. continuing..")
+        os.system("sudo -u "+args.user+" espeak-ng \"blob over edge\"")
         continue    
     top_n=1
     if recognize:
@@ -406,34 +408,58 @@ while 1:
         if len(recognized)>0:
             top_recognized=list(recognized.keys())[0]
         else:
+            os.system("sudo -u "+args.user+" espeak-ng \"could not recognize.\"")
             continue
         #os.system("espeak-ng \"Looks like\"")
-        os.system("aplay "+top_recognized)
+        os.system("sudo -u "+args.user+" aplay "+top_recognized)
         print("recognize time=",time.time()-rt)
+        if top_recognized=="forward.png":
+            print("moving forward..")
+            ser.write("moveforward_200".encode())
+        elif top_recognized=="backward.png":
+            print("moving backward..")
+            ser.write("movebackward_200".encode())
+        elif top_recognized=="turnleft.png":
+            print("turning left..")
+            ser.write("spincw_200".encode())
+        elif top_recognized=="turnright.png":
+            print("turning right..")
+            ser.write("spinacw_200".encode())
+        time.sleep(0.5)
         #time.sleep(3)
     if learn:
         print("learning..")
         lt=time.time()
-        sign_name=str(index)+".mp3"
+        sign_name=str(index)+".wav"
         print("Please tell me the name of the pattern? You have 5 seconds.")
-        os.system("espeak-ng \"Please tell me the name of the pattern? You have 5 seconds.\"")
-        #os.system("arecord -f cd -d 3 "+sign_name)
+        os.system("sudo -u "+args.user+" espeak-ng \"Please tell me the name of the pattern? You have 5 seconds.\"")
+        #os.system("sudo -u "+args.user+" arecord -d 5 "+sign_name)
+        
         freq = 44100
         duration=5
         # Start recorder with the given values 
         # of duration and sample frequency
         recording = sd.rec(int(duration * freq), 
-                           samplerate=freq, channels=1)
+                           samplerate=freq, channels=1,device=11)
         sd.wait()
+        """
+        wav_obj=wave.open(sign_name,mode='rb')
+        n_frames=wav_obj.getnframes()
+        frame_data=wav_obj.readframes(n_frames)
+        recording=np.frombuffer(frame_data,dtype=np.uint8)
+        """
+        print(np.max(recording))
         if np.max(recording)<0.1:
             print("Cant hear anything.")
-            os.system("espeak-ng \"Cant hear anything\"")
+            os.system("sudo -u "+args.user+" espeak-ng \"Cant hear anything\"")
             continue
+        
         norm=0.9/np.max(recording)
         recording*=norm
         write(sign_name,freq,recording)
+
         print("Okay.")
-        os.system("espeak-ng Okay")
+        os.system("sudo -u "+args.user+" espeak-ng Okay")
         learn_out=l.learn2(blob_index,sign_name)
         if len(learn_out)>0:
             index+=1
