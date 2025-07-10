@@ -46,12 +46,14 @@ https://github.com/dusty-nv/jetson-utils
      `python3 -m pip install sounddevice`<br>
      `sudo apt install libportaudio2 espeak-ng`<br>
     
-4. Install pyrebel
+4. Install pyrebel<br>
    `git clone https://github.com/ps-nithin/pyrebel`<br>
    `cd pyrebel`<br>
    `python3 -m pip install .`<br>
+   
 
 # Running the script
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
 `cd zumo-jetson/scripts`<br>
-`sudo python3 pyrebel_main_learn_sound_jetson.py --camera 1`<br>
+`sudo $HOME/miniforge3/bin/python3 pyrebel_main_learn_sound_jetson.py --camera 1 --user=$USERNAME`<br>
+
