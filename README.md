@@ -46,8 +46,10 @@ https://github.com/dusty-nv/jetson-utils
      `python3 -m pip install sounddevice`<br>
      `sudo apt install libportaudio2 espeak-ng`<br>
     
-4. Install pyrebel 
-`sudo python3 -m pip install pyrebel`
+4. Install pyrebel
+   `git clone https://github.com/ps-nithin/pyrebel`<br>
+   `cd pyrebel`<br>
+   `python3 -m pip install .`<br>
 
 # Running the script
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
