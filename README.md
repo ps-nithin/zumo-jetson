@@ -28,10 +28,13 @@ A robot that learns and recognizes patterns on the go.
 11. Powered by 4xAA batteries.
 
 # Setup
+Tested to run on a Jetson Nano with Jetpack 4.6.1. Should work with other jetsons also.
 1. Install jetson-utils
 https://github.com/dusty-nv/jetson-utils
 
-2. Install pyrebel 
+2. Numba is installed inside a miniforge environment.
+   2.1 Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl  
+3. Install pyrebel 
 `sudo python3 -m pip install pyrebel`
 
 # Running the script
