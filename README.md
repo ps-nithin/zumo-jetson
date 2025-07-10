@@ -28,7 +28,7 @@ A robot that learns and recognizes patterns on the go.
 11. Powered by 4xAA batteries.
 
 # Setup
-Tested to run on a Jetson Nano with Jetpack 4.6.1. Should work with other jetsons also.
+Tested to run on a Jetson Nano with Jetpack 4.6.1.
 1. Install jetson-utils
 https://github.com/dusty-nv/jetson-utils
 
