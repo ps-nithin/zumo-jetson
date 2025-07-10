@@ -56,7 +56,8 @@ https://github.com/dusty-nv/jetson-utils
    `cd pyrebel`<br>
    `python3 -m pip install .`<br>
    
-   To learn patterns you could also use `demo/pyrebel_main_learn.py` (https://github.com/ps-nithin/pyrebel#5-pattern-recognition-demo)<br>
+   Patterns can also be learned using `pyrebel/demo/pyrebel_main_learn.py` (https://github.com/ps-nithin/pyrebel#5-pattern-recognition-demo)<br>
+   For example, the images in `zumo-jetson/scripts/pre-trained-images/` are learned to control motors of the robot.
 
 You may also need to change microphone and speaker settings.
 
