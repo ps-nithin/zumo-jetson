@@ -32,14 +32,18 @@ Tested to run on a Jetson Nano with Jetpack 4.6.1. Should work with other jetson
 1. Install jetson-utils
 https://github.com/dusty-nv/jetson-utils
 
-2. Numba is installed inside a miniforge environment.<br>
-Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl<br>
-
+2. Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl<br>
+     Numba is installed inside miniforge environment.<br>
      Run the following commands to install numba,<br>
-     `source miniforge3/bin/activate`<br>
+     `source $HOME/miniforge3/bin/activate`<br>
      `conda install python=3.8`<br>
      `conda install -c numba numba`<br>
-     
+     Copy `jetson-utils` library files from `/usr/lib/python3.6/dist-packages/` to `$HOME/miniforge3/lib/python3.8/site-packages`
+     `python3 -m pip install pyserial`
+     `python3 -m pip install scipy`
+     `python3 -m pip install sounddevice`
+     `sudo apt install libportaudio2 espeak-ng`
+    
 4. Install pyrebel 
 `sudo python3 -m pip install pyrebel`
 
