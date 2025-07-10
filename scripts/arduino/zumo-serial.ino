@@ -66,7 +66,7 @@ void on_motor_ctrl_sub1(int speed){
     analogWrite(A0,LOW);
     analogWrite(A1,-speed);
   }  
-  delay(1000);
+  delay(500);
   stop_zumo();
 }
 
@@ -79,7 +79,7 @@ void on_motor_ctrl_sub2(int speed){
     analogWrite(A2,LOW);
     analogWrite(A3,-speed);
   }  
-  delay(1000);
+  delay(500);
   stop_zumo();
 }
 
@@ -96,7 +96,7 @@ void on_zumo_move(int speed){
     analogWrite(A2,LOW);
     analogWrite(A3,-speed);
   }  
-  delay(1000);
+  delay(500);
   stop_zumo();
 }
 
@@ -113,7 +113,7 @@ void on_zumo_spin(int speed){
     analogWrite(A2,-speed);
     analogWrite(A3,LOW);
   }  
-  delay(1000);
+  delay(500);
   stop_zumo();
 }
 void stop_zumo(){
