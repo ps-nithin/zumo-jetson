@@ -35,10 +35,10 @@ https://github.com/dusty-nv/jetson-utils
 2. Numba is installed inside a miniforge environment.<br>
 Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl<br>
 
-Run the following commands to install numba,<br>
-`source miniforge3/bin/activate`<br>
-`conda install python=3.8`<br>
-`conda install -c numba numba`<br>
+     Run the following commands to install numba,<br>
+     `source miniforge3/bin/activate`<br>
+     `conda install python=3.8`<br>
+     `conda install -c numba numba`<br>
      
 4. Install pyrebel 
 `sudo python3 -m pip install pyrebel`
