@@ -1,0 +1,11 @@
+[Unit]
+Description=Zumo-Jetson service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/ps_nithin/
+ExecStart=/home/ps_nithin/miniforge3/bin/python3 pyrebel_main_learn_sound_jetson.py --camera 1 --user ps_nithin
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
