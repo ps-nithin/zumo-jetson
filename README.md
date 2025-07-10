@@ -57,6 +57,8 @@ https://github.com/dusty-nv/jetson-utils
    
    To learn patterns you could also use `demo/pyrebel_main_learn.py` (https://github.com/ps-nithin/pyrebel#5-pattern-recognition-demo)<br>
 
+You may also need to change microphone and speaker settings.
+
 # Running the script
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
 `cd zumo-jetson/scripts`<br>
