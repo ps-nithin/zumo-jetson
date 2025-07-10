@@ -29,10 +29,14 @@ A robot that learns and recognizes patterns on the go.
 
 # Setup
 Tested to run on a Jetson Nano with Jetpack 4.6.1.
-1. Install jetson-utils
+1. Update packages<br>
+`sudo apt update`<br>
+`sudo apt upgrade`<br>
+
+2. Install jetson-utils
 https://github.com/dusty-nv/jetson-utils
 
-2. Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl<br>
+3. Install miniforge with https://github.com/conda-forge/miniforge#unix-like-platforms-macos-linux--wsl<br>
      Numba is installed inside miniforge environment.<br>
      Run the following commands to install numba,<br>
      `source $HOME/miniforge3/bin/activate`<br>
