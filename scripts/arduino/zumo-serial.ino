@@ -1,3 +1,21 @@
+/*
+# Copyright (C) 2024-2025 Nithin PS.
+# This file is part of Pyrebel.
+#
+# Pyrebel is free software: you can redistribute it and/or modify it under the terms of 
+# the GNU General Public License as published by the Free Software Foundation, either 
+# version 3 of the License, or (at your option) any later version.
+#
+# Pyrebel is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License along with Pyrebel.
+# If not, see <https://www.gnu.org/licenses/>.
+#
+*/
+
+
 #include <Arduino_LSM6DSOX.h>
 
 float Ax, Ay, Az;
@@ -136,8 +154,7 @@ void setup()
   if (!IMU.begin()) {
     while (1);
   }
-  Serial.begin(115200);   // set up Serial library at 9600 bps
-  Serial.println("Ardu says: Let's start!");
+  Serial.begin(115200);
 }
 
 void loop()
@@ -149,85 +166,37 @@ void loop()
 
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(Gx, Gy, Gz);
-  }
-  imu_data.angular_velocity.x=Gx;
-  imu_data.angular_velocity.y=Gy;
-  imu_data.angular_velocity.z=Gz;
-  imu_data.linear_acceleration.x=Ax;
-  imu_data.linear_acceleration.y=Ay;
-  imu_data.linear_acceleration.z=Az;
-  zumo_imu_pub.publish(&imu_data);   
+  }   
   */
   if(millis()-last_call>2000){
     stop_zumo();    
   }
   if (Serial.available() > 0) {
     String state = Serial.readStringUntil('\n');
-    Serial.print("Ardu says: You told me to ");
-    Serial.println(state);
     if (state.startsWith("moveforward_")) {
       int speed = state.substring(12).toInt();
       on_zumo_move(speed);
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);  
     } else if (state.startsWith("movebackward_")) {
       int speed = state.substring(13).toInt();
-      on_zumo_move(-speed);
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
+      on_zumo_move(-speed);   
     } else if (state.startsWith("spincw_")) {
       int speed = state.substring(7).toInt();
-      on_zumo_spin(speed);
-      //delay(100);
-      //stop_zumo();
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
+      on_zumo_spin(speed);   
     } else if (state.startsWith("spinacw_")) {
       int speed = state.substring(8).toInt();
-      on_zumo_spin(-speed);
-      //delay(100);
-      //stop_zumo();
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
+      on_zumo_spin(-speed);          
     } else if (state.startsWith("blinkled_")) {
       int status = state.substring(9).toInt();
-      on_led_sub(status);
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
+      on_led_sub(status);         
     } else if (state.startsWith("blinkledgreen_")) {
       int status = state.substring(14).toInt();
-      on_led_green_sub(status);
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
+      on_led_green_sub(status);          
     } else if (state.startsWith("blinkledblue_")) {
       int status = state.substring(13).toInt();
-      on_led_blue_sub(status);
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
+      on_led_blue_sub(status);          
     } else if (state.startsWith("blinkledwhite_")) {
       int status = state.substring(14).toInt();
-      on_led_white_sub(status);
-      state = "Done!";
-      Serial.print("Ardu says: ");
-      Serial.println(state);
-      //delay(1000);          
-    } else {
-      //Serial.println("Ardu says: Waiting for input!");
-      //delay(1000);
+      on_led_white_sub(status);          
     }
   }
   
