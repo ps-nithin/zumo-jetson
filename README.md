@@ -71,3 +71,6 @@ You may also need to change the microphone and speaker settings.
 `sudo systemctl daemon-reload`<br>
 `sudo systemctl enable zumo-jetson.service`<br>
 `sudo systemctl start zumo-jetson.service`<br>
+
+# Demo
+https://youtu.be/uzXOSZ4ztho
