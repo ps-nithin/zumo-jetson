@@ -361,16 +361,15 @@ while 1:
     
     n_layers=30
     # Initialize learning class
-    l=Learn(n_layers,len(bound_size),4)
- 
+    l=Learn(n_layers,len(bound_size),3)
+    i=3
     blob_over_edge=False
     blob_bounds_count=6
-    i=3
     print("len(know_base)=",len(l.get_know_base()))
     fst=time.time()
     while 1:
         # Do one layer of abstraction
-        abs.do_abstract_one(abs_threshold)
+        is_finished_abs=abs.do_abstract_one(abs_threshold)
         ba_sign=abs.get_sign()
         ba_size=abs.get_abstract_size()
         
@@ -390,9 +389,8 @@ while 1:
             break
         # Find signatures for the layer    
         is_finished=l.find_signatures2(ba_sign,ba_size)    
-        if is_finished:
+        if is_finished or is_finished_abs:
             break
-        i+=1     
     print("found signatures in",time.time()-fst)
     
     if blob_over_edge:
@@ -403,7 +401,7 @@ while 1:
     if recognize:
         print("recognizing..")
         rt=time.time()
-        recognized=l.recognize2(blob_index,top_n)
+        recognized=l.recognize_one(blob_index,top_n)
         print("symbols found=",recognized)
         if len(recognized)>0:
             top_recognized=list(recognized.keys())[0]
@@ -415,16 +413,16 @@ while 1:
         print("recognize time=",time.time()-rt)
         if top_recognized=="forward.png":
             print("moving forward..")
-            ser.write("moveforward_200".encode())
+            ser.write("moveforward_150".encode())
         elif top_recognized=="backward.png":
             print("moving backward..")
-            ser.write("movebackward_200".encode())
+            ser.write("movebackward_150".encode())
         elif top_recognized=="turnleft.png":
             print("turning left..")
-            ser.write("spincw_200".encode())
+            ser.write("spincw_150".encode())
         elif top_recognized=="turnright.png":
             print("turning right..")
-            ser.write("spinacw_200".encode())
+            ser.write("spinacw_150".encode())
         time.sleep(0.5)
         #time.sleep(3)
     if learn:
@@ -440,7 +438,7 @@ while 1:
         # Start recorder with the given values 
         # of duration and sample frequency
         recording = sd.rec(int(duration * freq), 
-                           samplerate=freq, channels=1,device=11)
+                           samplerate=freq, channels=1)
         sd.wait()
         """
         wav_obj=wave.open(sign_name,mode='rb')
@@ -460,7 +458,7 @@ while 1:
 
         print("Okay.")
         os.system("sudo -u "+args.user+" espeak-ng Okay")
-        learn_out=l.learn2(blob_index,sign_name)
+        learn_out=l.learn_one(blob_index,sign_name)
         if len(learn_out)>0:
             index+=1
             file=open('index.txt','w')
