@@ -359,7 +359,7 @@ while 1:
     # Initialize the abstraction class
     abs=Abstract(bound_data,len(bound_size),init_bound_abstract,scaled_shape,True)
     
-    n_layers=30
+    n_layers=100
     # Initialize learning class
     l=Learn(n_layers,len(bound_size),3)
     i=3
@@ -438,7 +438,7 @@ while 1:
         # Start recorder with the given values 
         # of duration and sample frequency
         recording = sd.rec(int(duration * freq), 
-                           samplerate=freq, channels=1)
+                           samplerate=freq, channels=1,device=11)
         sd.wait()
         """
         wav_obj=wave.open(sign_name,mode='rb')
