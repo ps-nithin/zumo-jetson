@@ -13,7 +13,7 @@ A robot that learns and recognizes patterns on the go.
 5. A speaker and microphone is connected to jetson nano over usb. A Raspberry pi camera module v2 is connected to csi camera port of the jetson nano. Wireless connectivity nor internet is needed to run the program but is used for setting up jetson nano.
 
 # Build
-<p align="center"><img src="images/zumo-jetson1.jpg"></img></p><br>
+<p align="center"><img src="images/photo1.jpg"></img></p><br>
 
 1. Zumo chassis (Pololu - Zumo Chassis Kit (No Motors) https://www.pololu.com/product/1418) act as the main chassis.
 2. Motors (Pololu - 298:1 Micro Metal Gearmotor HPCB 6V https://www.pololu.com/product/3069)
