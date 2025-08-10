@@ -27,7 +27,7 @@ A robot that learns and recognizes patterns on the go.
 10. Standoffs and PCBs for structure holding the components
 11. Powered by 4xAA batteries.
 
-You could hook up the connections using schematic or there is a robot controller <a href="docs/photo-pcb.jpg">board</a> (please find design files in `docs/zumo-jetson-pcb`).
+You could hook up the wires using schematic or there is a robot controller <a href="docs/photo-pcb.jpg">board</a> (please find design files in `docs/zumo-jetson-pcb`).
 
 # Setup
 Tested to run on a Jetson Nano with Jetpack 4.6.1.
