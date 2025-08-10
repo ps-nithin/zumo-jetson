@@ -25,7 +25,7 @@ A robot that learns and recognizes patterns on the go.
 8. USB speaker
 9. USB Wifi dongle / AC8265 Wireless NIC for Jetson Nano for wifi
 10. Standoffs and PCBs for structure holding the components
-11. Powered by 4xAA batteries.
+11. Powered by 4xAA batteries.<br>
 You could hook up the connections using schematic or there is a robot controller board (please find design files in `docs/zumo-jetson-pcb`).
 
 # Setup
