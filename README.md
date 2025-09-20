@@ -63,10 +63,17 @@ https://github.com/dusty-nv/jetson-utils
 You may also need to change the microphone and speaker settings.
 
 # Running the script
+1. Demo script 1 - Single pattern
 `cd`<br>
 `git clone https://github.com/ps-nithin/zumo-jetson`<br>
 `cd zumo-jetson/scripts`<br>
 `sudo $HOME/miniforge3/bin/python3 pyrebel_main_learn_sound_jetson.py --camera 1 --user=$USERNAME`<br>
+
+2. Demo script 2 - Multiple patterns
+`cd`<br>
+`git clone https://github.com/ps-nithin/zumo-jetson`<br>
+`cd zumo-jetson/scripts`<br>
+`sudo $HOME/miniforge3/bin/python3 pyrebel_main_learn_sound_jetson_multiple.py --camera 1 --user=$USERNAME`<br>
 
 # Running the script on startup
 `sudo cp zumo-jetson.service /etc/systemd/system/`<br>
