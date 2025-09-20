@@ -13,7 +13,6 @@ A robot that learns and recognizes patterns on the go.
 5. A speaker and microphone is connected to jetson nano over usb. A Raspberry pi camera module v2 is connected to csi camera port of the jetson nano. Wireless connectivity nor internet is needed to run the program but is used for setting up jetson nano.
 
 # Patterns
-Multiple patterns
 The program can handle both green and blue patterns simultaneously. These different combinations of green and blue patterns can occur,
 
 1. Only green patterns are present in the input.
