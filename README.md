@@ -12,6 +12,34 @@ A robot that learns and recognizes patterns on the go.
 
 5. A speaker and microphone is connected to jetson nano over usb. A Raspberry pi camera module v2 is connected to csi camera port of the jetson nano. Wireless connectivity nor internet is needed to run the program but is used for setting up jetson nano.
 
+# Patterns
+Multiple patterns
+The program can handle both green and blue patterns simultaneously. These different combinations of green and blue patterns can occur,
+
+1. Only green patterns are present in the input.
+In this case only recognition happens, either in 'text', or 'audio' channel. Channel having higher weightage is selected.
+
+2. Only blue patterns are present.
+In this case only learning happens. Since there are no green patterns, all the learning happens in 'audio' channel only. If there are multiple blue patterns, each constituent blue pattern has to be learned seperately in 'audio' channel before learning the pattern as a whole. 
+
+3. Input contains a combination of green and blue patterns.
+In this case both learning and recognition happens. The blue patterns are learned with the symbol recognized from reading the green patterns. Both recognizing green patterns and learning blue patterns takes place in channel 'text'.
+
+# Pre-training
+Letters of the English alphabets are pre-trained to provide a vocabulary for learning more complex patterns. The pre-trained letters can be relearned later to update the knowbase with different variations of the pre-trained letters as required. 
+
+# Motors
+The motors are controlled by four keywords in channel 'text'. 
+1. 'fw' for moving forward.
+2. 'bw' for moving backward.
+3. 'sc' for spinning in clockwise direction.
+4. 'sa' for spinning in anti clockwise direction.
+
+These keywords can be reassigned later to any arbitrary pattern you like by relearning.
+
+# Channels
+When an image is learned its signatures are stored in channel 'text'. When a recording is made the signatures are stored in channel 'audio'. During recognition, different symbols may be recognized for each channels. The symbol from channel with higher weightage is selected.
+
 # Build
 <p align="center"><img src="images/photo1.jpg"></img></p><br>
 
