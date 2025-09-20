@@ -86,7 +86,7 @@ https://github.com/dusty-nv/jetson-utils
    `python3 -m pip install .`<br>
    
    Patterns can also be learned using `pyrebel/demo/pyrebel_main_learn_multiple.py` (https://github.com/ps-nithin/pyrebel#5-pattern-recognition-demo).<br>
-   For example, images in zumo-jetson/scripts/images/train-hand/ are learned to learn English vocabulary.
+   For example, images in zumo-jetson/scripts/images/train-hand/ are learned to learn English vocabulary.<br>
    `python3 pyrebel_main_learn_multiple.py --learn images/train-hand/`
 
 
