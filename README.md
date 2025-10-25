@@ -114,4 +114,5 @@ You may also need to change the microphone and speaker settings.
 If everything went right you should see the white led blinking!
 
 # Demo
-https://youtu.be/uzXOSZ4ztho
+1. https://youtu.be/uzXOSZ4ztho Intro
+2. https://youtu.be/M06xsy5dlf4 Motor control
